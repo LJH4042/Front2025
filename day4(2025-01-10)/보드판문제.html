@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>보드판문제</title>
+    <style>
+        .board{
+            border: 1px solid black;
+            width: 400px;
+            height: 400px;
+            position: relative;
+        }
+
+        .box{
+            border: 1px solid green;
+            background-color: green;
+            color: white;
+            font-weight: bold;
+            width: 25px;
+            height: 25px;
+            position: absolute;
+            text-align: center;
+        }
+
+        .h{
+            top: 60px;
+            left: 80px;
+        }
+        .e{
+            bottom: 60px;
+            right: 60px;
+        }
+        .l_1{
+            top: 50px;
+            right: 80px;
+        }
+        .l_2{
+            bottom: 40px;
+            left: 100px;
+        }
+        .o{
+            top: 160px;
+            left: 170px;
+        }
+    </style>
+</head>
+<body>
+    <div class="board">
+        <div class="box h">H</div>
+        <div class="box e">E</div>
+        <div class="box l_1">L</div>
+        <div class="box l_2">L</div>
+        <div class="box o">O</div>
+    </div>
+</body>
+</html>

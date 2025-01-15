@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2단메뉴만들기</title>
+    <style>
+        ul{
+            padding: 0px;
+            margin: 0px;
+            list-style: none;
+        }
+
+        .menu{
+            display: flex;
+            border: 1px solid black;
+        }
+        .menu_item{
+            width: 25%;
+            height: 40px;
+            border: 1px solid black;
+            text-align: center;
+            line-height: 40px;
+            background-color: skyblue;
+            color: white;
+            position: relative;
+        }
+        .menu_item:hover{
+            background-color: #7bbbd7;
+        }
+        .menu_item:hover .hidden_menu{
+             display: block;
+        }
+        .hidden_menu{
+            display: none; /*안보이게 하기*/
+            width: 50%;
+            color: gray;
+            padding: 5px;
+            box-sizing: border-box;
+            border: 1px solid beige;
+            background-color: aqua;
+
+            /*상위 메뉴를 기준으로 배치*/
+            position: absolute;
+            left: 0px;
+            top: 40px;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+    <ul class="menu">
+        <li class="menu_item">
+            메뉴1
+            <!--하위메뉴-->
+            <ul class="hidden_menu">
+                <li>하위메뉴1</li>
+                <li>하위메뉴2</li>
+                <li>하위메뉴3</li>
+            </ul>
+        </li>
+        <li class="menu_item">
+            메뉴2
+            <!--하위메뉴-->
+            <ul class="hidden_menu">
+                <li>하위메뉴1</li>
+                <li>하위메뉴2</li>
+                <li>하위메뉴3</li>
+            </ul>
+        </li>
+        <li class="menu_item">
+            메뉴3
+            <!--하위메뉴-->
+            <ul class="hidden_menu">
+                <li>하위메뉴1</li>
+                <li>하위메뉴2</li>
+                <li>하위메뉴3</li>
+            </ul>
+        </li>
+        <li class="menu_item">메뉴4</li>
+    </ul>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. In sequi aliquam similique vitae itaque sed, cumque dignissimos magnam eligendi enim sunt, est architecto maiores aspernatur odio eos doloremque et pariatur.
+    </p>
+</body>
+</html>

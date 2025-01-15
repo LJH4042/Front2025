@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2단메뉴만들기연습</title>
+    <style>
+        ul{
+            list-style: none;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .menu{
+            display: flex;
+        }
+        .menu_item{
+            width: 25%;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            background-color: #67b0d1;
+            color: white;
+            font-size: 12px;
+            position: relative;
+        }
+        .menu_item:hover{
+            background-color: #7bbbd7;
+        }
+        .menu_item:hover .hidden_menu{
+            display: block;
+        }
+        .hidden_menu{
+            width: 50%;
+            border: 1px solid beige;
+            background-color: beige;
+            color: #ccc;
+            display: none;
+
+            /*상위메뉴를 기준으로 배치*/
+            /* position: absolute;
+            left: 40px;
+            left: 0px; */
+        }
+    </style>
+</head>
+<body>
+    <ul class="menu">
+        <li class="menu_item">
+            상위메뉴1
+            <!--하위메뉴-->
+            <ul class="hidden_menu">
+                <li>하위메뉴1</li>
+                <li>하위메뉴2</li>
+                <li>하위메뉴3</li>
+            </ul>
+        </li>
+        <li class="menu_item">상위메뉴2</li>
+        <li class="menu_item">상위메뉴3</li>
+        <li class="menu_item">상위메뉴4</li>
+    </ul>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure sit, nisi deleniti tenetur distinctio excepturi quisquam cupiditate itaque, officiis sunt omnis neque similique temporibus dolorum laudantium consequatur molestias et at!
+    Consectetur facere, quam quo libero quibusdam ducimus. Dolores, pariatur. Harum itaque voluptate consequuntur necessitatibus nam debitis, sit tempore aspernatur cumque cupiditate explicabo ipsa consectetur ab nemo assumenda. Quam, magni iure?
+    Aliquam, dolorem modi. Quo pariatur itaque asperiores reprehenderit, quam sapiente suscipit enim eaque corrupti corporis consequuntur aperiam sequi rem sint ut ipsum in tenetur. Temporibus repellat porro voluptatem dignissimos quia.
+    Sapiente magni, necessitatibus neque in cumque quasi officiis similique, temporibus quae repudiandae eaque nesciunt nulla possimus dolor autem ipsam odio inventore ea alias voluptates eius libero! Facilis labore unde at.
+    Nesciunt voluptatum velit et impedit ullam, quo perferendis necessitatibus asperiores aliquid iure neque non numquam quas nam deserunt fuga vel officia quod tempore aperiam corrupti deleniti nemo. Impedit, ullam recusandae?
+    Alias repellat blanditiis exercitationem reprehenderit et tempore sint dolore ipsa nobis quisquam eligendi quidem enim aperiam vitae facilis architecto, animi, similique temporibus nostrum totam ipsam a debitis est! Ea, laudantium?
+    Tempore natus maxime nulla consequuntur nesciunt id ratione odit debitis, nemo laudantium quod saepe repellendus cupiditate dolor explicabo molestias doloremque quasi fuga minima a necessitatibus eaque! Exercitationem dicta facilis in.
+    Ullam, recusandae. Provident at aperiam nam iste aliquid enim hic esse ducimus quod consectetur unde cupiditate temporibus nostrum, laboriosam, quos autem sit deserunt corrupti illum pariatur maiores velit ea vitae.
+    Molestiae, amet impedit! Molestiae esse cumque ea sit. Odio quaerat, repellat ad numquam voluptatem harum excepturi nisi quod sed temporibus maiores asperiores vero aspernatur beatae quidem. Ducimus itaque laboriosam aliquid.
+    Est adipisci facilis dolorem, vel deserunt rem saepe sed voluptatem incidunt reprehenderit odio explicabo ullam fugit inventore commodi, repellendus enim. Quisquam accusantium adipisci provident debitis minus culpa, enim beatae! Voluptatum!</p>
+</body>
+</html>

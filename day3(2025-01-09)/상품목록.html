@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상품목록</title>
+    <style>
+        .wrap{
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        ul{
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap; /*줄 바꿈*/
+        }
+        li{
+            width: 200px;
+            padding: 10px;
+        }
+        img{
+            width: 200px;
+        }
+        
+        .title{
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .auth{
+            font-size: 12px;
+            color: rgb(160, 160, 160);
+            font-weight: bold;
+        }
+
+        .rank_wrap{
+            display: flex;
+            justify-content: space-between;
+        }
+        .rank, .rank_top{
+            width: 20px;
+            text-align: center;
+            font-size: 14px;
+            padding: 1px;
+            background-color: gray;
+            color: white;
+            font-weight: bold;
+            border-top-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+        .rank_top{
+            width: 120px;
+            background-color: blueviolet;
+        }
+        .rank_change{
+            font-size: 12px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        
+        .date{
+            float: right;
+            margin-top: 0px;
+            margin-right: 65px;
+            color: rgb(160, 160, 160);
+            font-size: 11px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <ul>
+            <li>
+                <div class="rank_wrap">
+                    <p class="rank_top">교보문고 Best 1</p>
+                    <p class="rank_change" style="color: green;">NEW</p>
+                </div>
+                <img src="https://contents.kyobobook.co.kr/sih/fit-in/300x0/pdt/9791138432283.jpg" alt="상품이미지">
+                <p class="title">팬텀 버스터즈 2</p>
+                <p class="auth">네오쇼코 · 소미미디어</p>
+            </li>
+            <li>
+                <div class="rank_wrap">
+                    <p class="rank">2</p>
+                    <p class="rank_change" style="color: darkgray;">―</p>
+                </div>
+                <img src="https://contents.kyobobook.co.kr/sih/fit-in/300x0/pdt/9788936434120.jpg" alt="상품이미지">
+                <p class="title">소년이 온다</p>
+                <p class="auth">한강 · 창비</p>
+            </li>
+            <li>
+                <div class="rank_wrap">
+                    <p class="rank">3</p>
+                    <p class="rank_change" style="color: darkgray;">―</p>
+                </div>
+                <img src="https://contents.kyobobook.co.kr/sih/fit-in/300x0/pdt/9788965422785.jpg" alt="상품이미지">
+                <p class="title">해커스 토익 기출 VOCA(보카)</p>
+                <p class="auth">David Cho · 해커스어학연구소</p>
+            </li>
+            <li>
+                <div class="rank_wrap">
+                    <p class="rank">4</p>
+                    <p class="rank_change" style="color: green;">NEW</p>
+                </div>
+                <img src="https://contents.kyobobook.co.kr/sih/fit-in/300x0/pdt/3904000504957.jpg" alt="상품이미지">
+                <p class="title">보그(2025년 02월호)(D형)</p>
+                <p class="auth">두산매거진 편집부 · 두산매거진</p>
+            </li>
+            <li>
+                <div class="rank_wrap">
+                    <p class="rank">5</p>
+                    <p class="rank_change" style="color: green;">NEW</p>
+                </div>
+                <img src="https://contents.kyobobook.co.kr/sih/fit-in/300x0/pdt/9791138485593.jpg" alt="상품이미지">
+                <p class="title">흑무경담 2</p>
+                <p class="auth">토가와 요난 · 소미미디어</p>
+            </li>
+            <li>
+                <div class="rank_wrap">
+                    <p class="rank">6</p>
+                    <p class="rank_change" style="color: royalblue;">▼ 5</p>
+                </div>
+                <img src="https://contents.kyobobook.co.kr/sih/fit-in/300x0/pdt/9791194280491.jpg" alt="상품이미지">
+                <p class="title">헌법 필사</p>
+                <p class="auth">대한민국 · 더휴먼</p>
+            </li>
+            <li>
+                <div class="rank_wrap">
+                    <p class="rank">7</p>
+                    <p class="rank_change" style="color: darkgray;">―</p>
+                </div>
+                <img src="https://contents.kyobobook.co.kr/sih/fit-in/300x0/pdt/9788954682152.jpg" alt="상품이미지">
+                <p class="title">작별하지 않는다</p>
+                <p class="auth">한강 · 문학동네</p>
+            </li>
+            <li>
+                <div class="rank_wrap">
+                    <p class="rank">8</p>
+                    <p class="rank_change" style="color: royalblue;">▼ 4</p>
+                </div>
+                <img src="https://contents.kyobobook.co.kr/sih/fit-in/300x0/pdt/9788936434595.jpg" alt="상품이미지">
+                <p class="title">채식주의자</p>
+                <p class="auth">한강 · 창비</p>
+            </li>
+            <li>
+                <div class="rank_wrap">
+                    <p class="rank">9</p>
+                    <p class="rank_change" style="color: red;">▲ 2</p>
+                </div>
+                <img src="https://contents.kyobobook.co.kr/sih/fit-in/400x0/gift/pdt/1951/hot1733872740854.png" alt="상품이미지">
+                <p class="title">(7차) MBC 무한도전 20주년 2025일력</p>
+            </li>
+            <li>
+                <div class="rank_wrap">
+                    <p class="rank">10</p>
+                    <p class="rank_change" style="color: darkgray;">―</p>
+                </div>
+                <img src="https://contents.kyobobook.co.kr/sih/fit-in/300x0/pdt/9791169851053.jpg" alt="상품이미지">
+                <p class="title">어른의 행복은 조용하다</p>
+                <p class="auth">태수 · 페이지2북스</p>
+            </li>
+        </ul>
+        <p class="date">2025.01.08 기준</p>
+    </div>
+</body>
+</html>

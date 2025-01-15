@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2단메뉴만들기연습</title>
+    <style>
+        ul{
+            list-style: none;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .menu{
+            display: flex;
+        }
+        .menu_item{
+            width: 25%;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            background-color: #67b0d1;
+            color: white;
+            font-size: 12px;
+            position: relative;
+        }
+        .menu_item:hover{
+            background-color: #7bbbd7;
+        }
+        .menu_item:hover .hidden_menu{
+            display: block;
+        }
+        .hidden_menu{
+            width: 50%;
+            border: 1px solid beige;
+            background-color: beige;
+            color: #ccc;
+            display: none;
+
+            /*1ㅜ모를 기준으로 배치*/
+            position: absolute;
+            left: 40px;
+            left: 0px;
+        }
+    </style>
+</head>
+<body>
+    <ul class="menu">
+        <li class="menu_item">
+            상위메뉴1
+            <!--하위메뉴-->
+            <ul class="hidden_menu">
+                <li>하위메뉴1</li>
+                <li>하위메뉴2</li>
+                <li>하위메뉴3</li>
+            </ul>
+        </li>
+        <li class="menu_item">상위메뉴2</li>
+        <li class="menu_item">상위메뉴3</li>
+        <li class="menu_item">상위메뉴4</li>
+    </ul>
+</body>
+</html>

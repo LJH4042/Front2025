@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인</title>
+    <style>
+        /*헤더*/
+        header{
+            display: flex;
+            height: 100px;
+            background-color: rgb(245, 248, 248);
+            position: relative;
+        }
+        .title{
+            position: absolute;
+            left: 10px;
+            top: 20px;
+        }
+        .search{
+            display: flex;
+            align-items: center;
+            position: absolute;
+            right: 10px;
+            bottom: 20px;
+            border: 1px solid rgb(245, 248, 248);
+        }
+        .search input{
+            border: none;
+            outline: none;
+            height: 43px;
+            width: 130px;
+        }
+        .search img{
+            width: 60px;
+        }
+
+        /*내비*/
+        nav{
+            height: 40px;
+            padding: 20px;
+            background-color: rgb(232, 243, 243);
+        }
+        nav ul{
+            list-style: none;
+            display: flex;
+            margin: 0px;
+            padding: 0px;
+            font-size: 15px;
+            gap: 10px;
+        }
+        nav a{
+            color: black;
+            text-decoration: none;
+        }
+
+        /*세션*/
+        section{
+            width: 400px;
+            padding: 20px;
+            border: 0.5px solid rgb( 234, 222, 222);
+            margin: 0 auto;
+        }
+        .log_img{
+            width: 300px;
+            height: 300px;
+            background-image: url(./image/login_logo.jpg);
+            background-size: cover;
+            background-position: center;
+            margin-left: 45px;
+        }
+        .log_info{
+            padding: 10px;
+        }
+        .log_info input{
+            width: 98%;
+            height: 40px;
+            margin-top: 5px;
+        }
+        .log_info button{
+            width: 100%;
+            height: 50px;
+            background-color: silver;
+            border: 0px;
+            margin-top: 10px;
+        }
+
+        /*푸터*/
+        footer{
+            height: 60px;
+            margin-top: 50px;
+            background-color: rgb(233 , 239 , 239 );
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <!--헤더-->
+    <header>
+        <div class="title">
+            <img src="./image/logo.png" alt="로고">
+        </div>
+        <div class="search">
+            <input type="text">
+            <img src="./image/검색.png" alt="검색">
+        </div>
+    </header>
+
+    <!--내비바-->
+    <nav>
+        <ul>
+            <li><a href="./login.html">로그인</a></li>
+            <li><a href="./joinus.html">회원가입</a></li>
+            <li><a href="./index.html">홈으로</a></li>
+        </ul>
+    </nav>
+
+    <!--세션-->
+    <section>
+        <div class="log_img"></div>
+        <div class="log_info">
+            <input type="text" placeholder="아이디">
+            <input type="password" placeholder="비번">
+            <button>로그인</button>
+        </div>
+        
+    </section>
+
+    <!--푸터-->
+    <footer>
+        <div class="item"><img src="./image/footer_acorn.png"></div>
+        <div class="item">(주)에이콘이즈 에이콘아카데미(홍대)</div>
+        <div class="item">COPYRIGHT(C) HBILAB ALL RIGHTS RESERVED.</div>
+    </footer>
+</body>
+</html>

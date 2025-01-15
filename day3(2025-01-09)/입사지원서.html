@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>입사지원서</title>
+    <style>
+       @import url('https://fonts.googleapis.com/css2?family=Hahmlet:wght@100..900&family=Nanum+Pen+Script&display=swap');
+        
+        *{
+            font-family: "Hahmlet", serif;
+            font-optical-sizing: auto;
+            font-weight: weight;
+            font-style: normal;
+        }
+
+        .wrap{
+            border: 1px solid black;
+            width: 600px;
+            padding: 20px;
+            margin: 0 auto;
+        }
+        
+        .title, .resume{
+            width: 550px;
+            margin: 0 auto;
+        }
+
+        .username li{
+            padding: 10px;
+        }
+        .username label{
+            width: 20%;
+            float: left;
+        }
+
+        .btn{
+            margin: 0 auto;
+            width: 30%;
+        }
+        .btn button{
+            margin-top: 20px;
+            padding: 10px;
+            border: none;
+            background-color:lightgray;
+        }
+
+        h3{
+            margin: 30px 0px
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="title">
+            <h1>프런트엔드 개발자 지원서</h1>
+            <p>HTML, CSS, Javascript에 대한 기술적 이해와 경험이 있는 분을 찾습니다.</p>
+            <hr>
+        </div>
+        <div class="resume">
+            <form>
+                <div class="username">
+                    <h3>개인정보</h3>
+                    <ul>
+                        <li><label>이름</label><input type="text" placeholder="공백없이 입력하세요"></li>
+                        <li><label>연락처</label><input type="tel"></li>
+                    </ul>
+                </div>
+                <div class="field">
+                    <h3>지원 분야</h3>
+                    <ul>
+                        <li><input type="radio" name="field">웹 퍼블리싱</li>
+                        <li><input type="radio" name="field">웹 어플리케이션 개발</li>
+                        <li><input type="radio" name="field">개발 환경 개선</li>
+                    </ul>
+                </div>
+                <div class="reason">
+                    <h3>지원 동기</h3>
+                    <textarea cols="70" rows="5" placeholder="본사 지원 동기를 간략히 써주세요."></textarea>
+                </div>
+                <div class="btn">
+                    <button type="submit">지원하기</button>
+                    <button type="reset">다시쓰기</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
