@@ -233,6 +233,7 @@
                 count.innerText = `시도 횟수 : ${countValue}` //최종 시도 횟수 표시
                 count.style.color = "red" //최종 시도 횟수 빨간색으로 변경
                 check.innerText = `정답입니다. (${randomNum})` //정답 표시 구간에 '정답입니다.' 표시
+                checkNum.disabled = true //확인 버튼 비활성화
                 //3번 안에 성공했을 경우
                 if(countValue <= 3){
                     present.innerText = "간식을 제공해드립니다." //상품 제공 구간 표시

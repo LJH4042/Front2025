@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제어구조_switch문</title>
+</head>
+<body>
+    <h2>switch문 : 분기문 : 조건에 따라 다른 코드(작업)을 수행하게 함</h2>
+
+    <script>
+        //메뉴선택 시 다른 코드 수행하기
+
+        //1.입력, 2.조회, 3.변경, 4.삭제, 5.종료
+        let menu = parseInt(prompt3("메뉴를 선택하세요"))
+
+        //함수(기능), 다른 사람이 만든 기능 : 라이브러리
+        //parseInt, Number => "123" => 123
+        //parseInt("123") => 123    parseInt("123안녕") => 123
+        //Number("123") => 123      Number("123안녕") => NaN
+
+        switch(menu){
+            case 1:
+                alert("입력합니다.")
+                break;
+            case 2:
+                alert("조회합니다.")
+                break;
+            case 3:
+                alert("변경합니다.")
+                break;
+            case 4:
+                alert("삭제합니다.")
+                break;
+            case 5:
+                alert("종료합니다.")
+                break;
+            default:
+                alert("메뉴에 없습니다.")
+        }
+    </script>
+</body>
+</html>
