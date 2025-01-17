@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제어문_break문2</title>
+</head>
+<body>
+    <script>
+        // let menu = parseInt(prompt("1.등록, 2.조회, 3.변경, 4.종료"))
+
+        //이름이 있는 반복문
+        //반복문 switch문이 있을 때
+        //반복문 안에 반복문이 있을 때, 바깥쪽 반복(외부반복)을 빠져나갈 때
+        loop : while(true){
+            let menu = parseInt(prompt("1.등록, 2.조회, 3.변경, 4.종료"))
+
+            switch(menu){
+                case 1:
+                    alert("등록합니다.")
+                    break;
+                case 2:
+                    alert("조회합니다.")
+                    break;
+                case 3:
+                    alert("변경합니다.")
+                    break;
+                case 4:
+                    alert("종료합니다.")
+                    break loop;
+                default:
+                    alert("잘못 입력하셨습니다.")
+            }
+        }
+    </script>
+</body>
+</html>
