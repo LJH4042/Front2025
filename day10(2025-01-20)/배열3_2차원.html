@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열3 - 2차원</title>
+</head>
+<body>
+    <script>
+        let month1 = [
+            ["apple", "banana", "cat", "dog", "elephant", "flower", "guitar"],
+            ["house", "internet", "jungle", "kangaroo", "lion", "moon", "nest"],
+            ["orange", "piano", "queen", "rabbit", "sun", "tree", "umbrella"],
+            ["vase", "water", "xylophone", "yacht", "zebra", "ant", "ball"]
+        ]
+        
+        let month2 = [
+            ["car", "door", "egg", "fire", "garden", "hat", "ice"],
+            ["jacket", "key", "lamp", "mouse", "note", "oil", "pencil"],
+            ["quite", "rain", "snack", "table", "universe", "violin", "whale"],
+            ["x-mas", "yellow", "zero", "army", "brain", "candy", "dril"]
+        ]
+
+        for(let i = 0; i < month1.length; i++){
+            for(let j = 0; j < month1[i].length; j++){
+                console.log(month1[i][j])
+            }
+        }
+        for(let i = 0; i < month2.length; i++){
+            for(let j = 0; j < month2[i].length; j++){
+                console.log(month2[i][j])
+            }
+        }
+    </script>
+</body>
+</html>

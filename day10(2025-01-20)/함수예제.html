@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수예제</title>
+</head>
+<body>
+    <script>
+        // 홀수인지 확인
+        // function oddCheck(oddInput){
+        //     if(oddInput % 2 === 0) return false
+        //     else if(oddInput % 2 === 1) return true
+        //    }
+
+        // let oddInput = parseInt(prompt("숫자를 입력하세요."))
+
+        // let result = oddCheck(oddInput)
+        // document.write(result)
+
+        //----------------------------------------------
+
+        // 성인인지 확인
+        // function ageCheck(ageInput){
+        //     if(ageInput < 20) return false
+        //     else if(ageInput >= 20) return true
+        // }
+
+        // let ageInput = parseInt(prompt("나이를 입력하세요."))
+
+        // let result = ageCheck(ageInput)
+        // document.write(result)
+
+        //----------------------------------------------
+
+        // 구구단
+        // function gugudan(numInput){
+        //     let gugudanArr = []
+
+        //     for(let i = 1; i < 10; i++){
+        //         gugudanArr.push(`${numInput} X ${i} = ${numInput * i}`)
+        //     }
+
+        //     return gugudanArr
+        // }
+
+        // let numInput = parseInt(prompt("숫자를 입력하세요."))
+        // let result =  gugudan(numInput)
+        
+        // for(let i = 0; i < 9; i++){
+        //     document.write(result[i] + "<br>")
+        // }
+
+        //----------------------------------------------
+
+        // 사각형 넓이
+        // function squarWidth(row, col){
+        //     return `사각형의 넓이는 ${row * col}cm<sup>2`
+        // }
+
+        // let row = parseInt(prompt("가로를 입력하세요."))
+        // let col = parseInt(prompt("세로를 입력하세요."))
+
+        // let result = squarWidth(row, col)
+        // document.write(result)
+
+        //----------------------------------------------
+
+        // 두 수의 합
+        // function addTwoNum(num1, num2){
+        //     return num1 + num2
+        // }
+
+        // let num1 = parseInt(prompt("첫 번째 숫자를 입력하세요."))
+        // let num2 = parseInt(prompt("두 번째 숫자를 입력하세요."))
+
+        // let result = addTwoNum(num1, num2)
+        // document.write(result)
+
+        //----------------------------------------------
+
+        // 두 수의 나머지
+        // function remainTwoNum(num1, num2){
+        //     return num1 % num2
+        // }
+
+        // let num1 = parseInt(prompt("첫 번째 숫자를 입력하세요."))
+        // let num2 = parseInt(prompt("두 번째 숫자를 입력하세요."))
+
+        // let result = remainTwoNum(num1, num2)
+        // document.write(result)
+
+        //----------------------------------------------
+
+        //별 찍기
+        function stars(num){
+            let count = 1
+
+            for(let i = 1; i <= num; i++){
+                for(let j = 1; j <= count; j++){
+                    document.write("*")
+                }
+                document.write("<br>")
+                count++
+            }
+        }
+
+        let num = parseInt(prompt("숫자를 입력하세요."))
+        stars(num)
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열4_3차원</title>
+</head>
+<body>
+    <script>
+        let year = [
+            [
+                ["apple", "banana", "cat", "dog", "elephant", "flower", "guitar"],
+                ["house", "internet", "jungle", "kangaroo", "lion", "moon", "nest"],
+                ["orange", "piano", "queen", "rabbit", "sun", "tree", "umbrella"],
+                ["vase", "water", "xylophone", "yacht", "zebra", "ant", "ball"]
+            ],
+            [
+                ["car", "door", "egg", "fire", "garden", "hat", "ice"],
+                ["jacket", "key", "lamp", "mouse", 'note', "oil", "pencil"],
+                ["quite", "rain", "snack", "table", "universe", "viloin", "whale"],
+                ["x-mas", "yellow", "zero", "army", "brain", "candy", "dril"]
+            ]
+        ]
+
+        for(let i = 0; i < year.length; i++){
+            for(let j = 0; j < year[i].length; j++){
+                for(let k = 0; k < year[i][j].length; k++){
+                    console.log(year[i][j][k])
+                }
+            }
+        }
+    </script>
+</body>
+</html>
