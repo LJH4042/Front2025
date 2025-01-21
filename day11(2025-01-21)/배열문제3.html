@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열문제3</title>
+</head>
+<body>
+    <script>
+        //입력 : 학생성적 여러개 : scores[]
+        //출력 : 총점 sum, 평균 avg
+        //준비 : 
+        //처리 : 
+
+        //국어 점수 5개 총점과 평균 구하기
+        let scores = []
+
+        //성적 입력 받기
+        for(let i = 0; i < 5; i++){
+            let input = parseInt(prompt("점수 입력"))
+            console.log(input)
+            scores[i] = input
+        }
+
+        //총점 구하기
+        let sum = 0
+        for(let i = 0; i < scores.length; i++){
+            sum += scores[i]
+        }
+        console.log(sum)
+
+        //평균 구하기
+        let avg = sum / scores.length
+        console.log(avg)
+        alert(`총점 : ${sum}`)
+        alert(`평균 : ${avg}`)
+    </script>
+</body>
+</html>
