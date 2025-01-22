@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열메서드7</title>
+</head>
+<body>
+    <script>
+        //map()
+        const numbers = [1, 2, 3, 4, 5]
+
+        let newArr = numbers.map((number) =>  number * 2)
+        document.write(newArr + "<br>")
+
+        //이름 배열의 각 이름을 님자를 붙혀서 출력
+        const names = ['영숙', '순자','영자','옥순','현숙'];
+
+        names.forEach((name) => {
+            document.write(`${name} 님, `)
+        })
+        document.write("<br>")
+
+        let result = names.map((name) => ` ${name} 님`)
+        document.write(result + "<br>")
+    </script>
+</body>
+</html>

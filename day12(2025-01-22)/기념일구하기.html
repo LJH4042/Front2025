@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기념일구하기</title>
+</head>
+<body>
+    <div class="date200"></div>
+    <div class="date100"></div>
+
+    <script>
+        function dateCalc(num){
+            let specDate = new Date("2025-01-07") //200일 후 ?
+            specDate.setDate(specDate.getDate() + num)
+            
+
+            let year = specDate.getFullYear()
+            let month = specDate.getMonth() + 1
+            let date = specDate.getDate()
+
+            document.querySelector(`.date${num}`).innerHTML = `${year}년 ${month}월 ${date}일`
+        }
+
+        dateCalc(200)
+        dateCalc(100)
+    </script>
+</body>
+</html>

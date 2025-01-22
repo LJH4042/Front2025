@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열메서드6</title>
+</head>
+<body>
+    <script>
+        const numbers = [2, 4, 6, 8, 10]
+        let result = false
+
+        numbers.forEach((number) => {
+            if(number === 7){
+                result = true
+            }
+        })
+
+        console.log(result)
+
+        //includes()
+        let result2 = numbers.includes(7)
+        console.log(result)
+    </script>
+</body>
+</html>
