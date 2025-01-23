@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>비밀번호보이기_안보이기</title>
+</head>
+<body>
+    <input id="pwdInput" type="password" placeholder="비밀번호를 입력하세요">
+    <button id="pwdBtn" onclick="toggle()">보이기</button>
+
+    <script>
+        function toggle(){
+            const pwdInput = document.querySelector("#pwdInput")
+            const pwdBtn = document.querySelector("#pwdBtn")
+
+            if(pwdInput.type === "password"){
+                pwdInput.type = "text"
+                pwdBtn.innerHTML = "안 보이기"
+            }else if(pwdInput.type === "text"){
+                pwdInput.type = "password"
+                pwdBtn.innerHTML = "보이기"
+            }
+        }
+    </script>
+</body>
+</html>

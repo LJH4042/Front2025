@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ForEach연습</title>
+</head>
+<body>
+    <script>
+        let names = ["김민환", "김유민", "박수경"]
+
+        console.log(names[0])
+        console.log(names[1])
+        console.log(names[2])
+
+        //배열 -> 반복문 처리
+        for(let i = 0; i < names.length; i++){
+            console.log(names[i])
+        }
+
+        names.forEach(function(name, index){ //요소값, 인덱스
+            console.log(name, index)
+        })
+
+        names.forEach((name, index) => console.log(name, index))
+
+        function aaa(name, index){
+            console.log(name, index)
+        }
+        names.forEach(aaa)
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM요소선택4</title>
+</head>
+<body>
+    <h2>querySelectorAll 선택하기</h2>
+    <p>주의사항 : 모두 선택하기 때문에 한 개여도 배열로 반환형</p>
+
+    <div class="wrap1"></div>
+    <div id="wrap2"></div>
+
+    <button onclick="change1()">wrap1 변경</button>
+    <button onclick="change2()">wrap2 변경</button>
+
+    <script>
+        function change1(){
+            const wrap1 = document.querySelectorAll(".wrap1")[0]
+
+            wrap1.innerHTML = "새로운 내용1"
+
+            wrap1.style.width = "100px"
+            wrap1.style.height = "100px"
+            wrap1.style.backgroundColor = "red"
+        }
+
+        function change2(){
+           const wrap2 = document.querySelectorAll("#wrap2")[0]
+
+           wrap2.innerHTML = "새로운 내용2"
+
+            wrap2.style.width = "100px"
+            wrap2.style.height = "100px"
+            wrap2.style.backgroundColor = "green"
+        }
+    </script>
+</body>
+</html>

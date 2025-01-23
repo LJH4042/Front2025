@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>순발력 버튼게임</title>
+    <style>
+        #timerContainer{
+            font-size: 25px;
+        }
+
+        #gameContainer{
+            position: relative;
+        }
+
+        .gameBtn{
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            font-size: 12px;
+            background-color: red;
+            color: white;
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="timerContainer"></div>
+        <div id="gameContainer"></div>
+    </div>
+
+    <script>
+        /*
+            <게임 룰>
+            
+            1. 10초의 제한시간이 주어진다.
+            2. 제한시간 내에 버튼을 10번 누르면 게임에서 승리한다.
+            3. 버튼은 화면 내에서 랜덤 위치로 생성된다.
+            4. 버튼을 누를 때마다 숫자가 1씩 올라간다.
+            5. 버튼을 누르면 그 다음 숫자 버튼이 랜덤으로 다른 위치에서 생성된다.
+            6. 제한시간 내에 버튼을 10번 누르지 못하면 게임에서 패배한다.
+        */
+
+        /*타이머 구역*/
+        let timerCount = 10 //최초 타이머 값
+
+        const timerContainer = document.querySelector("#timerContainer") //타이머 게임 구역 지정
+        timerContainer.innerHTML = timerCount //화면에 타이머 표시
+
+        //타이머 기능
+        let timer = setInterval(() => {
+            timerCount-- //1초마다 타이머 값 줄이기
+            timerContainer.innerHTML = timerCount //화면에 타이머 새로 표시
+
+            //타이머가 끝났을 경우
+            if(timerCount < 1){
+                clearInterval(timer) //타이머 종료
+                alert("실패하셨습니다.") //실패 알림
+                gameContainer.style.display = "none" //버튼 게임 구역 지우기
+                document.write("게임에서 패배하셨습니다.")
+        }
+        }, 1000);
+
+        /*게임 구역*/
+        let count = 0 //게임 횟수
+        let btnNum = 1 //버튼 숫자
+
+        const gameContainer = document.querySelector("#gameContainer") //버튼 게임 구역 지정
+
+        //버튼 클릭 함수
+        function clickBtn(){
+            const randomTop = Math.floor(Math.random() * 600 + 1) //버튼 위치 top 랜덤 숫자
+            const randomLeft = Math.floor(Math.random() * 1400 + 1) //버튼 위치 left 랜덤 숫자
+
+            const gameBtn = document.createElement("button") //버튼 생성
+            gameBtn.classList.add("gameBtn") //버튼에 class="gameBtn" 적용
+            gameBtn.style.top = `${randomTop}px` //버튼 위치 top 지정
+            gameBtn.style.left = `${randomLeft}px` //버튼 위치 left 지정
+            gameBtn.innerHTML = btnNum //버튼 숫자 지정
+
+            gameContainer.appendChild(gameBtn) //버튼 게임 구역에 버튼을 자식 노드로 연결
+
+            count++ //게임 횟수 증가
+            btnNum++ //버튼 숫자 증가
+
+            //버튼을 클릭했을 시
+            gameBtn.addEventListener("click", function(){
+                gameContainer.removeChild(gameBtn) //기존에 있던 버튼 삭제
+
+                if(count < 10){
+                    clickBtn(); //게임 횟수가 10 이하이면 다음 숫자 버튼 생성
+                }else{
+                    alert("게임이 종료되었습니다.") //게임 횟수가 10 이상이면 게임 종료
+                    clearInterval(timer) //타이머 종료
+                    document.write("게임에서 승리하셨습니다.") //화면에 게임 승리 표시
+                }
+            })
+        }
+
+        clickBtn() 
+    </script>
+</body>
+</html>

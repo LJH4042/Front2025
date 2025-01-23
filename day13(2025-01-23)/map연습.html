@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>map연습</title>
+</head>
+<body>
+    <script>
+        //map 배열 메서드
+        // ~ 님
+        let names = ["박시우", "권지언", "이동우"]
+
+        let newNames = []
+        for(let i = 0; i < names.length; i++){
+            let item = names[i]
+            newNames[i] = item + " 님"
+        }
+        console.log(newNames)
+
+        let newNames2 = names.map(function(name, index){
+            return name + " 씨"
+        })
+        console.log(newNames2)
+
+        let newNames3 = names.map((name) => {
+            return name + " 씨 ^^"
+        })
+        console.log(newNames3)
+
+        let newNames4 = names.map(name => name + " 님 ^^")
+        console.log(newNames4)
+    </script>
+</body>
+</html>
