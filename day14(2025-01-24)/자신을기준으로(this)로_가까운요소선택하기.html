@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자신을기준으로(this)로_가까운요소선택하기</title>
+    <style>
+        .item{
+            display: flex;
+            border: 1px solid black;
+        }
+        .item > div{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <!--item-->
+    <div class="item">
+        <div><input type="text" class="content"></div>
+        <div><button onclick="getContent(this)">클릭</button></div>
+    </div>
+    <div class="item">
+        <div><input type="text" class="content"></div>
+        <div><button onclick="getContent2(this)">클릭</button></div>
+    </div>
+
+    <script>
+        function getContent(obj){
+            const item = obj.parentElement.parentElement // parentElement : 부모 요소 지정
+            const content = item.querySelector(".content").value
+
+            alert(content)
+        }
+
+        //closest() 제공
+        function getContent2(obj){
+            const item = obj.closest(".item") // closest() : 가장 가까운 요소를 찾음
+            const content = item.querySelector(".content").value
+
+            alert(content)
+        }
+    </script>
+</body>
+</html>

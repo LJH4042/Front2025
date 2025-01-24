@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>갤러리만들기_텍스트</title>
+</head>
+<body>
+    <div class="wrap">
+        <div class="gallery"></div>
+    </div>
+
+    <button onclick="next()">다음</button>
+
+    <script>
+        let message = ["곧 설연휴 시작 !!! ^^ 신난다 !!", "프론트 프로젝트 곧 시작 합니다!! 재미있게 해 줘요  🍔 🍟",  
+                       "날씨가 넘 추워요 감기 조심", "설연휴 잘 보내고 와요 !!", "for , if, 1차원배열, 함수 연습 연습",
+                       "함수가 별거냐 ^^", "배열이 별거냐 ^^"] ;
+
+        let count = 0
+
+        function next(){
+            const gallery = document.querySelector(".gallery")
+
+            gallery.innerHTML = message[count]
+            count++
+
+            if(count >= message.length){
+                count = 0
+            }
+        }
+    </script>
+</body>
+</html>

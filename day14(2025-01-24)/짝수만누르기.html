@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>짝수만 누르기</title>
+    <style>
+        table{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        td{
+            border: 1px solid black;
+            width: 70px;
+            height: 70px;
+            text-align: center;
+        }
+
+        .click{
+            background-color: green;
+            color: white;
+        }
+
+        .failDiv{
+            display: none;
+        }
+        .successDiv{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div id="timerContainer"></div>
+        <div id="gameContainer">
+            <table>
+                <tr>
+                    <td class="numBtn"></td>
+                    <td class="numBtn"></td>
+                    <td class="numBtn"></td>
+                    <td class="numBtn"></td>
+                    <td class="numBtn"></td>
+                    <td class="numBtn"></td>
+                </tr>
+                <tr>
+                    <td class="numBtn"></td>
+                    <td class="numBtn"></td>
+                    <td class="numBtn"></td>
+                    <td class="numBtn"></td>
+                    <td class="numBtn"></td>
+                    <td class="numBtn"></td>
+                </tr>
+                <tr>
+                    <td class="numBtn"></td>
+                    <td class="numBtn"></td>
+                    <td class="numBtn"></td>
+                    <td class="numBtn"></td>
+                    <td class="numBtn"></td>
+                    <td class="numBtn"></td>
+                </tr>
+                <tr>
+                    <td class="numBtn"></td>
+                    <td class="numBtn"></td>
+                    <td class="numBtn"></td>
+                    <td class="numBtn"></td>
+                    <td class="numBtn"></td>
+                    <td class="numBtn"></td>
+                </tr>
+                <tr>
+                    <td class="numBtn"></td>
+                    <td class="numBtn"></td>
+                    <td class="numBtn"></td>
+                    <td class="numBtn"></td>
+                    <td class="numBtn"></td>
+                    <td class="numBtn"></td>
+                </tr>
+                <tr>
+                    <td class="numBtn"></td>
+                    <td class="numBtn"></td>
+                    <td class="numBtn"></td>
+                    <td class="numBtn"></td>
+                    <td class="numBtn"></td>
+                    <td class="numBtn"></td>
+                </tr>
+            </table>
+    
+            <button onclick="checkAnswer()">정답</button>
+        </div>
+        <div class="failDiv">실패하셨습니다.</div>
+        <div class="successDiv">성공하셨습니다.</div>
+    </div>
+
+    <script>
+        const failDiv = document.querySelector(".failDiv")
+        const successDiv = document.querySelector(".successDiv")
+
+        /*타이머 구역*/
+        let timerCount = 20 //최초 타이머 값
+
+        const timerContainer = document.querySelector("#timerContainer") //타이머 게임 구역 지정
+        timerContainer.innerHTML = timerCount //화면에 타이머 표시
+
+        //타이머 기능
+        let timer = setInterval(() => {
+            timerCount-- //1초마다 타이머 값 줄이기
+            timerContainer.innerHTML = timerCount //화면에 타이머 새로 표시
+
+            //타이머가 끝났을 경우
+            if(timerCount < 1){
+                clearInterval(timer) //타이머 종료
+                alert("실패하셨습니다.") //실패 알림
+                gameContainer.style.display = "none" //버튼 게임 구역 지우기
+                timerContainer.style.display = "none"
+                failDiv.style.display = "block"
+        }
+        }, 1000);
+
+        /*게임 구역*/
+        const gameContainer = document.querySelector("#gameContainer") 
+
+        const numBtn = document.querySelectorAll(".numBtn")
+
+        const numArr = []
+        const answerArr = []
+        const submitArr = []
+
+        for(let i = 0; i < numBtn.length; i++){
+            const randomNum = Math.floor(Math.random() * 100 + 1)
+            
+            if(numArr.includes(randomNum)){
+                i--
+            }else{
+                numArr.push(randomNum)
+                numBtn[i].innerHTML = randomNum
+                if(randomNum % 2 === 0){
+                    answerArr.push(randomNum)
+                }
+            }
+        }
+
+        for(let i = 0; i < numBtn.length; i++){
+            numBtn[i].addEventListener("click", function(){
+                if(submitArr.includes(numBtn[i].innerHTML)){
+                    submitArr.pop(numBtn[i].innerHTML)
+                    numBtn[i].classList.remove("click")
+                }else{
+                    submitArr.push(numBtn[i].innerHTML)
+                    numBtn[i].classList.add("click")
+                }
+            })
+        }
+
+        function checkAnswer(){
+            let count = 0
+
+            answerArr.sort((a, b) => a - b)
+            submitArr.sort((a, b) => a - b)
+
+            for(let i = 0; i < answerArr.length; i++){
+                if(answerArr[i] == submitArr[i]){
+                    count++
+                }
+            }
+
+            if(count === answerArr.length){
+                alert("정답입니다.")
+                clearInterval(timer) //타이머 종료
+                successDiv.style.display = "block"
+                gameContainer.style.display = "none"
+                timerContainer.style.display = "none"
+            }else{
+                alert("다시 해보세요.")
+            }
+        }
+    </script>
+</body>
+</html>

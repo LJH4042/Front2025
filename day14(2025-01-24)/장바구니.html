@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>장바구니</title>
+    <style>
+        .wrap{
+            width: 900px;
+            margin: 0 auto;
+        }
+
+        table{
+            border: 1px solid black;
+            border-collapse: collapse;
+            width: 900px;
+        }
+        th, td{
+            border: 1px solid black;
+            padding: 5px;
+            width: 200px;
+        }
+        caption{
+            font-weight: bold;
+            font-size: 20px;
+            padding:30px;
+
+        }
+
+        #order{
+            border:1px solid black;
+            height: 50px;
+            line-height: 50px;
+            text-align: right;
+            font-weight: bold;
+
+            padding: 5px;
+        }
+
+        #total-price{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <table>
+            <caption>카페</caption>
+            <thead>
+                <tr>
+                    <th>선택</th>
+                    <th>제품명</th>
+                    <th>금액</th>
+                    <th>수량</th>
+                    <th>결제금액</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="checkbox" class="checkbox"></td>
+                    <td>아메리카노</td>
+                    <td class="unit">4500</td>
+                    <td><input type="text" class="qty" onkeyup="calPrice()"></td>
+                    <td class="amt">0</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="checkbox"></td>
+                    <td>카페라떼</td>
+                    <td class="unit">5000</td>
+                    <td><input type="text" class="qty" onkeyup="calPrice()"></td>
+                    <td class="amt">0</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="checkbox"></td>
+                    <td>바닐라라떼</td>
+                    <td class="unit">5500</td>
+                    <td><input type="text" class="qty" onkeyup="calPrice()"></td>
+                    <td class="amt">0</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="total_wrap">
+            <p><button onclick="itemDelete()">삭제</button></p>
+            <p id="order">결제 금액 <span id="total-price"> 0</span> 원</p>      
+         </div>
+    </div>
+
+    <script>
+        const unit = document.querySelectorAll(".unit")
+        const qty = document.querySelectorAll(".qty")
+        const amt = document.querySelectorAll(".amt")
+
+        function updatePrice(){
+            const totalPrice = document.querySelector("#total-price")
+            let sum = 0
+
+            for(let i = 0; i < amt.length; i++){
+                sum += parseInt(amt[i].innerHTML)
+            }
+
+            return totalPrice.innerHTML = sum
+        }
+
+        function calPrice(){
+            for(let i = 0; i < qty.length; i++){
+                amt[i].innerHTML = qty[i].value * unit[i].innerHTML
+            }
+
+            updatePrice()
+        }
+
+        function itemDelete(){
+            const checkbox = document.querySelectorAll(".checkbox")
+
+            for(let i = 0; i < checkbox.length; i++){
+                if(checkbox[i].checked){
+                    qty[i].value = ""
+                    amt[i].innerHTML = 0
+                    checkbox[i].checked = false
+                }
+            }
+
+            updatePrice()
+        }
+    </script>
+</body>
+</html>

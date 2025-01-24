@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM요소부모자식선택하기</title>
+</head>
+<body>
+    <h2>div 태그 내에 자식 요소 선택</h2>
+
+    <div id="movie">
+        <p>범죄도시</p>
+        <p>범죄도시2</p>
+        <p>범죄도시3</p>
+    </div>
+
+    <script>
+        const movie = document.getElementById("movie")
+
+        const p1 = movie.firstElementChild // firstElementChild : 첫 번째 자식요소
+        const p2 = p1.nextElementSibling // nextElementSibling : 그 다음 형제요소
+        const p3 = movie.lastElementChild // lastElementChild : 마지막 자식요소
+
+        console.log(p1.innerHTML)
+        console.log(p2.innerHTML)
+        console.log(p3.innerHTML)
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로또공만들기</title>
+    <style>
+        .ball{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 50px;
+            font-size: 20px;
+            margin: 10px;
+            display: inline-block;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="createLotto()">로또만들기</button>
+    <div id="lottoDiv"></div>
+
+    <script>
+        /*
+            1.로또 번호 만들기
+            2.로또공 6개 띄우기
+        */
+
+        /*로또 번호 만들기*/
+        function getLottoNum(){
+            const lottoArr = []
+
+            while(lottoArr.length < 6){
+                const randomNum = Math.floor(Math.random() * 45 + 1)
+                if(!lottoArr.includes(randomNum)){
+                    lottoArr.push(randomNum)
+                }
+            }
+
+            return lottoArr.sort((a, b) => a - b)
+        }
+
+        /*로또공 6개 띄우기*/
+        const lottoDiv = document.querySelector("#lottoDiv")
+
+        function createLotto(){
+            lottoDiv.innerHTML = ""
+            const lottoArr = getLottoNum()
+
+            for(let i = 0; i < lottoArr.length; i++){
+                const rColor = Math.floor(Math.random() * 255 + 1)
+                const gColor = Math.floor(Math.random() * 255 + 1)
+                const bColor = Math.floor(Math.random() * 255 + 1)
+
+                const ball = document.createElement("div")
+
+                ball.classList.add("ball")
+                ball.style.backgroundColor = `rgb(${rColor}, ${gColor}, ${bColor})`
+                ball.innerHTML = lottoArr[i]
+
+                setTimeout(() => {
+                    lottoDiv.appendChild(ball)
+                }, (i + 1) * 500) 
+            }
+        }
+    </script>
+</body>
+</html>
