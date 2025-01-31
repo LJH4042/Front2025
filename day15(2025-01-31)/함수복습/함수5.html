@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수5</title>
+</head>
+<body>
+    <script>
+        //입력 : 객체
+        //반환 : 없음
+        function e1(name, price, brand, calories){
+            document.write(name + "<br>")
+            document.write(price + "<br>")
+            document.write(brand + "<br>")
+            document.write(calories + "<br>")
+            document.write("<br>")
+        }
+
+        function e2(snack){
+            document.write(snack.name + "<br>")
+            document.write(snack.price + "<br>")
+            document.write(snack.brand + "<br>")
+            document.write(snack.calories + "<br>")
+            document.write("<br>")
+        }
+
+        e1("맛동산", 4500, "해태", 5000)
+
+        //객체로 전달(객체를 사용한 우아한 전달)
+        e2({name : "맛동산", price : 4500, brand : "해태", calories : 500})
+    </script>
+</body>
+</html>

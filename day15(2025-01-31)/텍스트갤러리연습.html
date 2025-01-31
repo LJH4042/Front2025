@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>텍스트갤러리연습</title>
+</head>
+<body>
+    <div class="menu">
+        <div>돈까스</div>
+        <div>제육</div>
+        <div>카레돈까스</div>
+        <div>오므라이스</div>
+    </div>
+
+    <button onclick="makeArray()">클릭</button>
+
+    <script>
+        let menuArray = []
+
+        function makeArray(){
+            const foods = document.querySelectorAll(".menu div")
+
+            foods.forEach((food) => menuArray.push(food.innerHTML))
+
+            console.log(menuArray)
+        }
+    </script>
+</body>
+</html>

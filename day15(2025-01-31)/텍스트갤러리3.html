@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>텍스트갤러리3</title>
+    <style>
+        .wrap{
+            height: 200px;
+        }
+
+        .gallery{
+            height: 50px;
+            line-height: 50px;
+            border: 1px solid black;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body onload="init()">
+    <div class="wrap">
+        <div class="gallery">갤러리
+            <div class="galler-slide">곧 설연휴 시작!!! ^^ 신난다!!</div>
+            <div class="galler-slide">프론트 프로젝트 곧 시작 합니다!! 재미있게 해줘요🍔🍟</div>
+            <div class="galler-slide">날씨가 넘 추워요 감기 조심</div>
+            <div class="galler-slide">설연휴 잘 보내고 와요!!</div>
+            <div class="galler-slide">for, if, 1차원배열, 함수 연습</div>
+            <div class="galler-slide">함수가 별거냐 ^^</div>
+            <div class="galler-slide">배열이 별거냐 ^^</div>
+        </div>
+    </div>
+
+    <button onclick="next()">다음</button>
+
+    <script>
+        let index = 0
+        function next(){
+            let gallery = document.querySelector(".gallery")
+
+            gallery.innerHTML = message[index]
+            index ++
+
+            if(index >= message.length){
+                index = 0
+            }
+        }
+
+        let message = []
+        function init(){
+            let gallerySlice = document.querySelectorAll(".galler-slide")
+            
+            for(let i = 0 ; i < gallerySlice.length; i++){
+                let item = gallerySlice[i].innerHTML
+                message.push(item)
+            }
+        }
+    </script>
+</body>
+</html>

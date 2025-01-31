@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상품목록2</title>
+    <style>
+        ul{
+            list-style: none;
+            padding: 0px;
+            margin: 0px;
+            display: flex;
+        }
+        li{
+            width: 300px;
+            height: 300px;
+            border: 1px solid black;
+            padding: 10px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        img{
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body onload="init()">
+    <ul class="product-list">
+        <!--자바스크립트로 상품목록 만들기-->
+    </ul>
+
+    <script>
+        function init(){
+            //서버에 데이터 요청하기
+            const products = [
+                {
+                    url : "media/Chrysanthemum.png",
+                    name : "국화",
+                    price : "10,000"
+                },
+                {
+                    url : "media/Desert.png",
+                    name : "사막",
+                    price : "20,000"
+                },
+                {
+                    url : "media/Hydrangeas.png",
+                    name : "수국",
+                    price : "30,000"
+                }
+            ];
+
+            const productList = document.querySelector(".product-list")
+
+            for(let i = 0; i < products.length; i++){
+                const newLi = document.createElement("li")
+
+                newLi.innerHTML = `
+                    <img src="${products[i].url}">
+                    <p>${products[i].name}</p>
+                    <p>${products[i].price}원</p>
+                `
+
+                productList.appendChild(newLi)
+            }
+        }
+    </script>
+</body>
+</html>
