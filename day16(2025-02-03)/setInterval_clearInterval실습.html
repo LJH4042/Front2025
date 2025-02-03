@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setInterval_clearInterval실습</title>
+</head>
+<body>
+    <button onclick="hi()">3초마다 안녕</button>
+    <button onclick="stopHi()">그만 !!!</button>
+
+    <script>
+        let timer
+
+        function hi(){
+            timer = setInterval(() => {
+                console.log("HI")
+            }, 3000)
+        }
+
+        function stopHi(){
+            clearInterval(timer)
+        }
+    </script>
+</body>
+</html>

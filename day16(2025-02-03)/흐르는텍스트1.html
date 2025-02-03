@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>흐르는텍스트1</title>
+</head>
+<body>
+    <div id="content">hello</div>
+
+    <button onclick="startRotate()">시작</button>
+    <button onclick="stopRotate()">그만</button>
+
+    <script>
+        let rotate
+
+        function startRotate(){
+            rotate = setInterval(() => {
+                let contentE = document.querySelector("#content")
+                let content = contentE.innerHTML
+
+                let first = content.substr(0, 1)
+                let last = content.substr(1)
+
+                contentE.innerHTML = last + first
+            }, 1000)
+        }
+
+        function stopRotate(){
+            clearInterval(rotate)
+        }
+    </script>
+</body>
+</html>

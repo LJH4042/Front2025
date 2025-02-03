@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>url이동</title>
+</head>
+<body>
+    <h2>url 이동</h2>
+
+    <a href="https://www.naver.com">네이버</a>
+    <button id="btn">구글</button>
+
+    <script>
+        //자바스크립트로 url 이동
+        //location 객체를 사용하여 url 이동할 수 있다.
+
+        const btn = document.querySelector("#btn")
+
+        //window 객체는 생략 가능
+        btn.addEventListener("click", function(){
+            // window.location.href = "https://www.google.com"
+            location.href = "https://www.google.com"
+        })
+    </script>
+</body>
+</html>

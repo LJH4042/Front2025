@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택한요소의정보얻기_this2</title>
+</head>
+<body>
+    <div class="item">아메리카노</div>
+    <div class="item">라떼</div>
+
+    <script>
+        const items = document.querySelectorAll(".item")
+
+        items.forEach((item) => {
+            item.addEventListener("click", function(){
+                const content = this.innerHTML
+                alert(content)
+            })
+        })
+    </script>
+</body>
+</html>
