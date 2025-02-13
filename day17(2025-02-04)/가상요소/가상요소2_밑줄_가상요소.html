@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가상요소2_밑줄_가상요소</title>
+    <style>
+        ul{
+            width: 100px;
+        }
+        li{
+            position: relative;
+        }
+        li::after{
+            content: "";
+            width: 0px;
+            height: 2px;
+            background-color: red;
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            transition: 1s;
+        }
+        li:hover::after{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>메뉴1</li>
+    </ul>
+</body>
+</html>

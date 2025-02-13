@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>join</title>
+    <style>
+        /*헤더*/
+        header{
+            height: 100px;
+            background-color: rgb(245, 248, 248);
+            display: flex;
+            position: relative;
+        }
+        .title{
+            position: absolute;
+            left: 10px;
+            top: 20px;
+        }
+        .search{
+            position: absolute;
+            right: 10px;
+            bottom: 20px;
+            display: flex;
+            align-items: center;
+            background-color: white;
+        }
+        .search img{
+            width: 40px;
+        }
+        .search input{
+            outline: none;
+            border: none;
+            padding: 10px;
+        }
+
+        /*내비 영역*/
+        nav{
+            height: 40px;
+            padding: 20px;
+            background-color: rgb(232, 243, 243);
+        }
+        nav a{
+            margin-right: 10px;
+            text-decoration: none;
+            color: black;
+        }
+
+        /*세션 영역*/
+        table{
+            width: 800px;
+            border: 1px solid rgb(227, 216, 216);
+            border-collapse: collapse;
+            margin: 0 auto;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+        caption{
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        td{
+            border: 1px solid rgb(227, 216, 216);
+            font-size: 12px;
+        }
+        tr{
+            height: 60px;
+        }
+        table input, table select{
+            width: 150px;
+            height: 30px;
+        }
+        table button{
+            width: 150px;
+            height: 40px;
+            border: 0px;
+        }
+        td:nth-child(1){
+            text-align: center;
+        }
+        table p{
+            color: red;
+            margin-top: 0px;
+        }
+
+        /*푸터 영역*/
+        footer{
+            height: 60px;
+            background-color: rgb(233, 239, 239);
+            display: flex;
+            align-items: center;
+        }
+        .item{
+            width: 33%;
+        }
+    </style>
+</head>
+<body>
+    <!--헤더 영역-->
+    <header>
+        <div class="title">  
+            <img src="./images/logo.png" alt="title">
+        </div>
+        <div class="search">
+            <input type="text">
+            <img src="./images/검색.png" alt="search">
+        </div>
+    </header>
+
+    <!--내비 영역-->
+    <nav>
+        <a href="./login.html">로그인</a>
+        <a href="./join.html">회원가입</a>
+        <a href="./index.html">홈으로</a>
+    </nav>
+
+    <!--세션 영역-->
+    <section>
+        <form name="frm">
+            <table>
+                <caption>회원가입</caption>
+                <tr>
+                    <td>이름</td>
+                    <td>
+                        <input name="name" type="text">
+                    </td>
+                </tr>
+                <tr>
+                    <td>아이디</td>
+                    <td>
+                        <input name="id" type="text">
+                        <button>중복확인</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>비밀번호</td>
+                    <td>
+                        <input name="pwd" type="password">
+                        <p>※비밀번호는 8자리 이상 영문숫자를 작성해 주세요</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>비밀번호확인</td>
+                    <td>
+                        <input name="pwdCheck" type="password">
+                    </td>
+                </tr>
+                <tr>
+                    <td>이메일</td>
+                    <td>
+                        <input name="email_1" type="text">@
+                        <input name="email_2" type="text">
+                        <select>
+                            <option>선택하세요</option>
+                            <option>google.com</option>
+                            <option>naver.com</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>학년/반</td>
+                    <td>
+                        <select>
+                            <option>선택하세요</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                        </select>학년
+                        <select>
+                            <option>선택하세요</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                        </select>반
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button type="button" onclick="checkJoin()">가입</button>
+                        <button type="reset">취소</button>
+                    </td>
+                    <td></td>
+                </tr>
+            </table>
+        </form>
+    </section>
+
+    <!--푸터 영역-->
+    <footer>
+        <div class="item">
+            <img src="./images/footer_acorn.png" alt="footer">
+        </div>
+        <div class="item">(주)에이콘이즈 에이콘아카데미(홍대)</div>
+        <div class="item">COPYRIGHT(C) HBILAB ALL RIGHTS RESERVED.</div>
+    </footer>
+
+    <script>
+        function checkJoin(){
+            const frm = document.frm
+
+            const name = frm.name
+            const id = frm.id
+            const pwd = frm.pwd
+            const pwdCheck = frm.pwdCheck
+            const email_1 = frm.email_1
+            const email_2 = frm.email_2
+
+            if(name.value === ""){
+                alert("이름을 입력하세요.")
+                name.focus()
+            }else if(id.value === ""){
+                alert("아이디를 입력하세요.")
+                id.focus()
+            }else if(pwd.value === ""){
+                alert("비밀번호를 입력하세요.")
+                pwd.focus()
+            }else if(pwdCheck.value === ""){
+                alert("비밀번호 확인을 입력하세요.")
+                pwdCheck.focus()
+            }else if(email_1.value === ""){
+                alert("이메일을 입력하세요.")
+                email_1.focus()
+            }else if(email_2.value === ""){
+                alert("이메일을 입력하세요.")
+                email_2.focus()
+            }else{
+                alert("회원가입에 성공하셨습니다.")
+            }
+        }
+    </script>
+</body>
+</html>

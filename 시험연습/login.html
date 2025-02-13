@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <style>
+        /*헤더*/
+        header{
+            height: 100px;
+            background-color: rgb(245, 248, 248);
+            display: flex;
+            position: relative;
+        }
+        .title{
+            position: absolute;
+            left: 10px;
+            top: 20px;
+        }
+        .search{
+            position: absolute;
+            right: 10px;
+            bottom: 20px;
+            display: flex;
+            align-items: center;
+            background-color: white;
+        }
+        .search img{
+            width: 40px;
+        }
+        .search input{
+            outline: none;
+            border: none;
+            padding: 10px;
+        }
+
+        /*내비 영역*/
+        nav{
+            height: 40px;
+            padding: 20px;
+            background-color: rgb(232, 243, 243);
+        }
+        nav a{
+            margin-right: 10px;
+            text-decoration: none;
+            color: black;
+        }
+
+        /*세션 영역*/
+        .log_wrap{
+            width: 400px;
+            padding: 20px;
+            border: 0.5px solid rgb(232, 222, 222);
+            margin: 0 auto;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        .log_img{
+            width: 300px;
+            height: 300px;
+            background-image: url(./images/login_logo.jpg);
+            background-size: cover;
+            background-position: center;
+            margin: 0 auto;
+        }
+        .log_info{
+            padding: 10px;
+        }
+        .log_info input{
+            width: 98%;
+            height: 40px;
+            margin-top: 5px;
+        }
+        .log_info button{
+            width: 100%;
+            height: 50px;
+            background-color: silver;
+            border: 0px;
+            margin-top: 10px;
+        }
+
+        /*푸터 영역*/
+        footer{
+            height: 60px;
+            background-color: rgb(233, 239, 239);
+            display: flex;
+            align-items: center;
+        }
+        .item{
+            width: 33%;
+        }
+    </style>
+</head>
+<body>
+    <!--헤더 영역-->
+    <header>
+        <div class="title">  
+            <img src="./images/logo.png" alt="title">
+        </div>
+        <div class="search">
+            <input type="text">
+            <img src="./images/검색.png" alt="search">
+        </div>
+    </header>
+
+    <!--내비 영역-->
+    <nav>
+        <a href="./login.html">로그인</a>
+        <a href="./join.html">회원가입</a>
+        <a href="./index.html">홈으로</a>
+    </nav>
+
+    <!--로그인 영역-->
+    <div class="log_wrap">
+        <div class="log_img"></div>
+        <form name="frm">
+            <div class="log_info">
+                <input name="idInput" type="text" placeholder="아이디">
+                <input name="pwdInput" type="password" placeholder="비밀번호">
+                <button type="button" onclick="checkLogin()">로그인</button>
+            </div>
+        </form>
+    </div>
+
+     <!--푸터 영역-->
+     <footer>
+        <div class="item">
+            <img src="./images/footer_acorn.png" alt="footer">
+        </div>
+        <div class="item">(주)에이콘이즈 에이콘아카데미(홍대)</div>
+        <div class="item">COPYRIGHT(C) HBILAB ALL RIGHTS RESERVED.</div>
+    </footer>
+
+    <script>
+        function checkLogin(){
+            const frm = document.frm
+
+            const idInput = frm.idInput
+            const pwdInput = frm.pwdInput
+
+            if(idInput.value === ""){
+                alert("아이디를 입력해주세요.")
+                idInput.focus()
+            }else if(pwdInput.value === ""){
+                alert("비밀번호를 입력해주세요.")
+                pwdInput.focus()
+            }else{
+                alert("로그인에 성공하셨습니다.")
+            }
+        }
+    </script>
+</body>
+</html>
